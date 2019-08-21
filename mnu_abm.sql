@@ -14,7 +14,7 @@ begin
     when modo = 'INS' then
 	    select count(*) into duplicados from mnu where mnu.entidad_id = varentidad_id and mnu.mnutitpadre = varmnutitopadre;
 		if duplicados = 1 then
-        	insert into public.MNU (entidad_id, MNUTitPadre) values (varentidad_id, varMNUTitPadre);
+        	insert into public.MNU (entidad_idTABLE(id_tablapadre integer, desc_tablapadre character varying, mnuid integer, desc_tablahijo character varying), MNUTitPadre) values (varentidad_id, varMNUTitPadre);
 		end if;
 		return query
 		select * from mnu_view;
