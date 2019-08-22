@@ -4,8 +4,7 @@ CREATE OR REPLACE FUNCTION public.grupos_x_roles(grupoid integer)
 AS $function$
 begin
 	return query 
-	SELECT grupos_x_roles.gruposxroles_id
-    grupos_x_roles.rol_id,
+	SELECT 
     roles.roldescripcion
     FROM grupos_x_roles 
     JOIN grupos ON grupos.grupo_id = grupos_x_roles.grupo_id
